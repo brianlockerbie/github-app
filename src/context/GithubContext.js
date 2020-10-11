@@ -14,15 +14,35 @@ export const GithubState = ({ children }) => {
         fetch(`https://api.github.com/users/${search}`)
           .then((res) => res.json())
           .then((data) => {
-            if (data.message){
+            if (data.message) {
               setUser(null);
               setRepos(null);
               setFollowers(null);
               setOverview(null);
-              setError("User not found...")
+              setError("User not found...");
+            } else {
+              setUser(data);
             }
           });
     };
 
-    return <GithubContext.Provider value={{}}>{children}</GithubContext.Provider>
+    const getRepos = () => {
+      fetch(`https://api.github.com/users/${search}/repos`)
+        .then((res) => res.json())
+        .then((data) => setRepos(data));
+    };
+
+    const getOverview = () => {
+      fetch(`https://api.github/users/${search}/repos?per_page=8&sort=asc`)
+        .then((res) => res.json())
+        .then((data) => setOverview(data));
+    };
+
+    const getFollowers = () => {
+      fetch(`https://api.github.com/users/${search}/followers`)
+        .then((res) => res.json())
+        .then((data) => setFollowers(data));
+    };
+
+    return <GithubContext.Provider value={{}}>{children}</GithubContext.Provider>;
 };
