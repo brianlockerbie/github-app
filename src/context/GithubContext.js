@@ -10,6 +10,12 @@ export const GithubState = ({ children }) => {
     const [search, setSearch] = useState('');
     const [error, setError] = useState('');
 
+    const getSearch = (e) => {
+      e.preventDefault();
+      getData();
+      setSearch('');
+    };
+
     const getData = () => {
         fetch(`https://api.github.com/users/${search}`)
           .then((res) => res.json())
@@ -22,6 +28,10 @@ export const GithubState = ({ children }) => {
               setError("User not found...");
             } else {
               setUser(data);
+              getOverview();
+              getRepos();
+              getFollowers();
+              setError("");
             }
           });
     };
@@ -44,5 +54,7 @@ export const GithubState = ({ children }) => {
         .then((data) => setFollowers(data));
     };
 
-    return <GithubContext.Provider value={{}}>{children}</GithubContext.Provider>;
+    return <GithubContext.Provider value={{ getSearch }}>
+               {children}
+        </GithubContext.Provider>;
 };
