@@ -1,12 +1,15 @@
-import React from 'react';
+import React from "react";
+import { GithubState } from './context/GithubContext';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      
-    </div>
+    <GithubState>
+      <div className="App">
+        <h1>Welcome</h1>
+      </div>
+    </GithubState> 
   );
-}
+};
 
 export default App;

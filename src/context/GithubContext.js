@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect } from 'react';
+import React, { createContext, useState, useEffect } from "react";
 
 export const GithubContext = createContext();
 
@@ -54,7 +54,20 @@ export const GithubState = ({ children }) => {
         .then((data) => setFollowers(data));
     };
 
-    return <GithubContext.Provider value={{ getSearch }}>
-               {children}
-        </GithubContext.Provider>;
+    return (
+      <GithubContext.Provider 
+        value={{
+          getSearch,
+          user,
+          repos,
+          followers,
+          overview,
+          search,
+          setSearch,
+          error,
+        }}
+      >
+        {children}
+      </GithubContext.Provider>
+    );
 };
