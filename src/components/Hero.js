@@ -1,11 +1,14 @@
 import React from 'react';
 import Container from './Container';
+import Nav from './Nav';
 
 const Hero = () => {
-
-    return(
-        <h1>hello</h1>
-    )
-}
+  return (
+    <section className="hero">
+      <Nav />
+      <Container></Container>
+    </section>
+  );
+};
 
 export default Hero;
