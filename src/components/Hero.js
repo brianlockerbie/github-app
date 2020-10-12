@@ -1,7 +1,7 @@
-import React, { useContext} from 'react';
+import React, { useContext } from "react";
 import { GithubContext } from "../context/GithubContext";
 import Container from './Container';
-import Nav from './Nav';
+import Nav from "./Nav";
 import User from "./User";
 
 const Hero = () => {
@@ -11,7 +11,16 @@ const Hero = () => {
     <section className="hero">
       <Nav />
       <Container>
-        <User />
+          {user ? (
+            <>
+              <User />
+              <div className="wrapper">
+                  
+              </div>
+            </>
+          ) : (
+            <p>No user</p>
+          )}
       </Container>
     </section>
   );
