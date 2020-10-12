@@ -7,13 +7,13 @@ export const GithubState = ({ children }) => {
   const [repos, setRepos] = useState(null);
   const [followers, setFollowers] = useState(null);
   const [overview, setOverview] = useState(null);
-  const [search, setSearch] = useState('');
-  const [error, setError] = useState('');
+  const [search, setSearch] = useState("h3h394");
+  const [error, setError] = useState("");
 
   const getSearch = (e) => {
     e.preventDefault();
     getData();
-    setSearch('');
+    setSearch("");
   };
 
   const getData = () => {
@@ -54,6 +54,11 @@ export const GithubState = ({ children }) => {
       .then((data) => setFollowers(data));
   };
 
+  useEffect(() => {
+    getData();
+    setSearch('');
+  },[]);
+
   return (
     <GithubContext.Provider 
       value={{
@@ -69,5 +74,5 @@ export const GithubState = ({ children }) => {
     >
       {children}
     </GithubContext.Provider>
-    );
+  );
 };

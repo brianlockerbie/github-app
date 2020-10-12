@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 const ReposNav = () => {
   return (
-    <div className="reposContainer">
+    <div className="reposNav">
       <NavLink activeClassName="active" to="/overview">
         Overview
       </NavLink>
