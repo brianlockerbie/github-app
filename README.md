@@ -2,6 +2,8 @@
 
 <p align="center">A Github user profile search application</p>
 
+## 🕹 Live Demo: https://focused-noether-908c0f.netlify.app/
+
 
 ## 🎮 How to use
 1. Type user name you want to search into the search bar and press enter.
