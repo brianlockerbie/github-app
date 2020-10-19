@@ -2,7 +2,7 @@
 
 <p align="center">A Github user profile search application</p>
 
-## 🕹 Live Demo: https://focused-noether-908c0f.netlify.app/
+## 🕹 Live Demo: https://react-github-profile-app.netlify.app/overview
 
 
 ## 🎮 How to use
