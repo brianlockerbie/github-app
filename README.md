@@ -2,7 +2,7 @@
 
 <p align="center">A Github user profile search application</p>
 
-## 🕹 Live Demo: https://react-github-profile-app.netlify.app/overview
+## 🕹 Live Demo: https://text-generator-app.netlify.app/
 
 
 ## 🎮 How to use
